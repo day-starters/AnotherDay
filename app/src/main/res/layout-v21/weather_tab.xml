@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/morning_bg"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textLoc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="장소"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/change_loc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/white"
+                    android:text="▼"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/nowWeatherTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="현재 날씨"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/nowWeatherImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/w_cloud1" />
+
+            <TextView
+                android:id="@+id/nowTempTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="현재 기온"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nowDustTxtV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="현재 미세먼지"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/nowHumTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="현재 습도"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/nowWindTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:text="현재 풍속"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/todayTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rec_half"
+                android:text="오늘 날씨"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec">
+
+                <Button
+                    android:id="@+id/weatherBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/round_rec"
+                    android:text="날씨"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:backgroundTint="@null" />
+
+                <Button
+                    android:id="@+id/humBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_rec"
+                    app:backgroundTint="@null"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:text="습도" />
+
+                <Button
+                    android:id="@+id/rainBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_rec"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:text="강수 확률" />
+
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/weatherScrollView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rec_half_rev"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none" >
+
+                <TableLayout
+                    android:id="@+id/weatherTable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/time0"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="자정" />
+
+                        <TextView
+                            android:id="@+id/time3"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="3시" />
+
+                        <TextView
+                            android:id="@+id/time6"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="6시" />
+
+                        <TextView
+                            android:id="@+id/time9"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="9시" />
+
+                        <TextView
+                            android:id="@+id/time12"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="정오" />
+
+                        <TextView
+                            android:id="@+id/time18"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="18시" />
+
+                        <TextView
+                            android:id="@+id/time21"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="21시" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/weatherIcoRow"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img0"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_sun" />
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud1" />
+
+                        <ImageView
+                            android:id="@+id/img6"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud2" />
+
+                        <ImageView
+                            android:id="@+id/img9"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud3" />
+
+                        <ImageView
+                            android:id="@+id/img12"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud4" />
+
+                        <ImageView
+                            android:id="@+id/img18"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_snow1" />
+
+                        <ImageView
+                            android:id="@+id/img21"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_snow2" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txt0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="자정"/>
+
+                        <TextView
+                            android:id="@+id/txt3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="3시" />
+
+                        <TextView
+                            android:id="@+id/txt6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="6시" />
+
+                        <TextView
+                            android:id="@+id/txt9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="9시" />
+
+                        <TextView
+                            android:id="@+id/txt12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="정오" />
+
+                        <TextView
+                            android:id="@+id/txt18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="18시" />
+
+                        <TextView
+                            android:id="@+id/txt21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="21시" />
+
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tomorrowTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_rec_half"
+                android:text="내일 날씨"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/buttons2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rec">
+
+                <Button
+                    android:id="@+id/weatherBtn2"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/round_rec"
+                    android:text="날씨"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:backgroundTint="@null" />
+
+                <Button
+                    android:id="@+id/humBtn2"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_rec"
+                    app:backgroundTint="@null"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:text="습도" />
+
+                <Button
+                    android:id="@+id/rainBtn2"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_rec"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:text="강수 확률" />
+
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/weatherScrollView2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_rec_half_rev"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none" >
+
+                <TableLayout
+                    android:id="@+id/weatherTable2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/time02"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="자정" />
+
+                        <TextView
+                            android:id="@+id/time32"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="3시" />
+
+                        <TextView
+                            android:id="@+id/time62"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="6시" />
+
+                        <TextView
+                            android:id="@+id/time92"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="9시" />
+
+                        <TextView
+                            android:id="@+id/time122"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="정오" />
+
+                        <TextView
+                            android:id="@+id/time182"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="18시" />
+
+                        <TextView
+                            android:id="@+id/time212"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:text="21시" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/weatherIcoRow2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img02"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_sun" />
+
+                        <ImageView
+                            android:id="@+id/img32"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud1" />
+
+                        <ImageView
+                            android:id="@+id/img62"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud2" />
+
+                        <ImageView
+                            android:id="@+id/img92"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud3" />
+
+                        <ImageView
+                            android:id="@+id/img122"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_cloud4" />
+
+                        <ImageView
+                            android:id="@+id/img182"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_snow1" />
+
+                        <ImageView
+                            android:id="@+id/img212"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/w_snow2" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txt02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="자정"/>
+
+                        <TextView
+                            android:id="@+id/txt32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="3시" />
+
+                        <TextView
+                            android:id="@+id/txt62"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="6시" />
+
+                        <TextView
+                            android:id="@+id/txt92"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="9시" />
+
+                        <TextView
+                            android:id="@+id/txt122"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="정오" />
+
+                        <TextView
+                            android:id="@+id/txt182"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="18시" />
+
+                        <TextView
+                            android:id="@+id/txt212"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:padding="1dp"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:text="21시" />
+
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

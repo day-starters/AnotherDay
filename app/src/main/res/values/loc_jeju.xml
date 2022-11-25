@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="jeju">
+        <item>시·군·구</item>
+        <item>서귀포시</item>
+        <item>제주시</item>
+    </string-array>
+
+</resources>

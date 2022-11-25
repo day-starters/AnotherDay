@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/default_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        android:text="어느 곳을 찾으세요?"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogrp"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_rec">
+
+        <RadioButton
+            android:id="@+id/chooseDirect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:buttonTint="#F15F5F"
+            android:layoutDirection="rtl"
+
+            android:text="직접 지정"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/chooseDB"
+            android:buttonTint="#F15F5F"
+            android:text="불러오기"
+
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layoutDirection="rtl"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/chooseDirectLayout">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/spin_sido"
+            android:entries="@array/all_loc"
+            android:spinnerMode="dropdown"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/spin_sigungu"
+            android:entries="@array/seoul"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/chooseDBLayout">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:id="@+id/spin_db"
+            android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selected_sido"
+
+        android:visibility="gone"
+        android:text="시·도"/>
+
+    <TextView
+        android:id="@+id/selected_sigungu"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="시·군·구"/>
+
+    <TextView
+        android:id="@+id/selected_db"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="데이터베이스"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/save_loc"
+        android:enabled="false"
+
+        android:backgroundTint="#BDBDBD"
+        android:text="위치 저장"
+        android:textColor="#353535"/>
+
+    <Button
+        android:id="@+id/delete_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="#FFD8D8"
+        android:enabled="true"
+        android:text="위치 목록 초기화"
+        android:textColor="#353535" />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="gyeongsangbukdo">
+        <item>시·군·구</item>
+        <item>경산시</item>
+        <item>경주시</item>
+        <item>고령군</item>
+        <item>구미시</item>
+        <item>군위군</item>
+        <item>김천시</item>
+        <item>독도</item>
+        <item>문경시</item>
+        <item>봉화군</item>
+        <item>상주시</item>
+        <item>성주군</item>
+        <item>안동시</item>
+        <item>영덕군</item>
+        <item>영양군</item>
+        <item>영주시</item>
+        <item>영천시</item>
+        <item>예천군</item>
+        <item>울릉군</item>
+        <item>울진군</item>
+        <item>의성군</item>
+        <item>청도군</item>
+        <item>청송군</item>
+        <item>칠곡군</item>
+        <item>포항시 남구</item>
+        <item>포항시 북구</item>
+    </string-array>
+
+</resources>

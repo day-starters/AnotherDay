@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sejong">
+        <item>시·군·구</item>
+        <item>세종시</item>
+    </string-array>
+
+</resources>

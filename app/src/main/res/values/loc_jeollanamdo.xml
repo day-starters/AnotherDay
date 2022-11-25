@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="jeollanamdo">
+        <item>시·군·구</item>
+        <item>강진군</item>
+        <item>고흥군</item>
+        <item>곡성군</item>
+        <item>광양시</item>
+        <item>구례군나주시</item>
+        <item>담양군</item>
+        <item>목포시</item>
+        <item>무안군</item>
+        <item>보성군</item>
+        <item>순천시</item>
+        <item>신안군</item>
+        <item>여수시</item>
+        <item>영광군</item>
+        <item>영암군</item>
+        <item>완도군</item>
+        <item>장성군</item>
+        <item>장흥군</item>
+        <item>진도군</item>
+        <item>함평군</item>
+        <item>해남군</item>
+        <item>화순군</item>
+    </string-array>
+
+</resources>

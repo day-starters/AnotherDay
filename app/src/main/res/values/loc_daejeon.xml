@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="daejeon">
+        <item>시·군·구</item>
+        <item>대덕구</item>
+        <item>동구</item>
+        <item>서구</item>
+        <item>유성구</item>
+        <item>중구</item>
+    </string-array>
+
+</resources>

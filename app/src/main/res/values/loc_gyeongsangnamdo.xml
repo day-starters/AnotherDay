@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="gyeongsangnamdo">
+        <item>시·군·구</item>
+        <item>거제시</item>
+        <item>거창군</item>
+        <item>고성군</item>
+        <item>김해시</item>
+        <item>남해군</item>
+        <item>밀양시</item>
+        <item>사천시</item>
+        <item>산청군</item>
+        <item>양산시</item>
+        <item>의령군</item>
+        <item>진주시</item>
+        <item>창녕군</item>
+        <item>창원시 마산합포구</item>
+        <item>창원시 마산회원구</item>
+        <item>창원시 성산구</item>
+        <item>창원시 의창구</item>
+        <item>창원시 진해구</item>
+        <item>통영시</item>
+        <item>하동군</item>
+        <item>함안군</item>
+        <item>함양군</item>
+        <item>합천군</item>
+    </string-array>
+
+</resources>

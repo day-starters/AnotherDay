@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alarmproject">
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!--절전모드에서도 실행-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>  <!--BootReceiver-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo3"
+        android:label="또하시"
+        android:roundIcon="@mipmap/logo3"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Alarmproject">
+
+        <activity android:name=".SplashActivity" android:theme="@style/IntroTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".SetLocation"/>
+        <activity android:name=".AlarmAddActivity" android:label="알람추가 액티비티"/>
+
+        <receiver android:name=".AlarmReceiver"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".AlarmOn"/>
+        <activity android:name=".AlarmOff" />
+    </application>
+
+</manifest>

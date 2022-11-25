@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="jeollabukdo">
+        <item>시·군·구</item>
+        <item>고창군</item>
+        <item>군산시</item>
+        <item>김제시</item>
+        <item>남원시</item>
+        <item>무주군</item>
+        <item>부안군</item>
+        <item>순창군</item>
+        <item>완주군</item>
+        <item>익산시</item>
+        <item>임실군</item>
+        <item>장수군</item>
+        <item>전주시 덕진구</item>
+        <item>전주시 완산구</item>
+        <item>정읍시</item>
+        <item>진안군</item>
+    </string-array>
+
+</resources>
