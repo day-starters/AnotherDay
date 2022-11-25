@@ -1,6 +1,7 @@
 # 일기 예보 및 뉴스 기능을 탑재한 그룹 알람 애플리케이션
-본 프로젝트는 연속적인 알람 여러 개를 설정하는 불편함을 해소하기 위해 알람 그룹화 기능을 제공하며, <br>
-추가적으로 뉴스와 일기 예보에 대한 정보까지 알려주어, 하루를 시작하기 위해 필요한 기본적인 것들을 구현한 프로젝트이다.
+본 프로젝트는 연속적인 알람 여러 개를 설정하는 불편함을 해소하기 위해 알람 그룹화 기능을 제공하며, 추가적으로 <br>
+뉴스와 일기 예보에 대한 정보까지 알려주어, 하루를 시작하기 위해 필요한 기본적인 것들을 구현한 프로젝트이다.
+
 <br>
 
 # 개발 환경
@@ -22,19 +23,23 @@
     <td>SQLite(내장)</td>
   </tr>
 </table>
+
 <br>
 
 # 시스템 구성도
+
 <br>
 
 # 화면 구성
 ![image](https://user-images.githubusercontent.com/61930770/203972697-9fe618f2-1228-460e-a4d6-c3c71d2fe5eb.png)
+
 <br>
 
 # 실행 화면
 * <a href="https://youtube.com/shorts/WMFBkaiYrM0">알람 추가, 수정, 삭제</a>
 * <a href="https://youtube.com/shorts/HCubVaHeYF8">알람 울림, 해제</a>
 * <a href="https://youtube.com/shorts/9DHvyL_fgwU">일기 예보</a>
+
 <br>
 
 # 역할 분담
