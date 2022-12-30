@@ -27,10 +27,6 @@
 
 <br>
 
-# 시스템 구성도
-
-<br>
-
 # 화면 구성
 ![image](https://user-images.githubusercontent.com/61930770/203972697-9fe618f2-1228-460e-a4d6-c3c71d2fe5eb.png)
 
